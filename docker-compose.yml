@@ -1,3 +1,4 @@
 services:
   heating:
     build: .
+    restart: always

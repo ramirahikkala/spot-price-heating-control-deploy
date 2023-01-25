@@ -6,3 +6,5 @@ services:
     privileged: true
     environment:
       - PYTHONUNBUFFERED=1
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"

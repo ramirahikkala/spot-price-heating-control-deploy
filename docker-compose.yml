@@ -1,9 +1,20 @@
 version: "3"
 services:
   heating:
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile.heating
     restart: always
     privileged: true
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
+  telegram:
+    build: 
+      context: .
+      dockerfile: Dockerfile.telegram
+    restart: always
     environment:
       - PYTHONUNBUFFERED=1
     volumes:

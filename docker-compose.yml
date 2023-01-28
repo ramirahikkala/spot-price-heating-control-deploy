@@ -10,6 +10,7 @@ services:
       - PYTHONUNBUFFERED=1
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
+      - dbdata:dbdata
   telegram:
     build: 
       context: .
@@ -19,3 +20,6 @@ services:
       - PYTHONUNBUFFERED=1
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
+      - dbdata:dbdata
+volumes:
+  dbdata:

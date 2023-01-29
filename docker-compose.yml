@@ -17,6 +17,7 @@ services:
       dockerfile: Dockerfile.telegram
     restart: always
     privileged: true
+    network_mode: "host"
     environment:
       - PYTHONUNBUFFERED=1
     volumes:

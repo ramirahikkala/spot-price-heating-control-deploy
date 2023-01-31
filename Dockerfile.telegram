@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 RUN apt-get update && apt-get install -y python3-pip python3-venv bluez bluez-hcidump
 RUN pip3 install pipx
-RUN pipx install ruuvibot==0.6.0
+RUN pipx install ruuvibot==0.6.1
 COPY settings.json .
 
 CMD ["/root/.local/bin/ruuvibot", "run"]

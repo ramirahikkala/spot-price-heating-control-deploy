@@ -1,5 +1,15 @@
 version: "3"
 services:
+  sqliteweb:
+    build: 
+      context: .
+      dockerfile: Dockerfile.sqliteweb
+    ports:
+      - 8080:8080    
+    restart: unless-stopped
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
+      - dbdata:/dbdata
   heating:
     build: 
       context: .
